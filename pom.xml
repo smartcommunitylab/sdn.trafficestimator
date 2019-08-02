@@ -11,7 +11,7 @@
 	</parent>
 	<groupId>it.smartcommunitylab</groupId>
 	<artifactId>traffic-estimator</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<name>Traffic Estimator</name>
 	<description>Traffic Estimator API for Spring Boot</description>
 
