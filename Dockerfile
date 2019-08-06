@@ -19,7 +19,6 @@ RUN  addgroup -g ${USER_GROUP_ID} ${USER_GROUP}; \
 
 WORKDIR  /home/${USER}/app
 RUN chown ${USER}:${USER_GROUP} /home/${USER}/app
-RUN mkdir indexes && chown ${USER}:${USER_GROUP} indexes
 COPY --from=mvn --chown=traffic:traffic ${FOLDER}/${APP} /home/${USER}/app/traffic.jar
 
 USER traffic
