@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 
 import it.smartcommunitylab.trafficestimator.model.osmdata;
 
-
+@Deprecated
 @Repository
 public interface OSMRepository extends JpaRepository<osmdata,Object>,JpaSpecificationExecutor<osmdata> {
 	

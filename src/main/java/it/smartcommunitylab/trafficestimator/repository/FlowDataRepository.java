@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 
 import it.smartcommunitylab.trafficestimator.model.SelectedFlowData;
 
+@Deprecated
 @Repository
 public interface FlowDataRepository extends JpaRepository<SelectedFlowData,Object>,JpaSpecificationExecutor<SelectedFlowData>  {
 
