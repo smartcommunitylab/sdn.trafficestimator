@@ -39,7 +39,7 @@ public class DatabaseConfig {
     @Bean(name = "trafficNewEntityManagerFactory")
     public EntityManagerFactory getTrafficNewEntityManagerFactory() {
         LocalContainerEntityManagerFactoryBean bean = new LocalContainerEntityManagerFactoryBean();
-//        bean.setPersistenceUnitName(env.getProperty("jdbc.name"));
+        bean.setPersistenceUnitName(env.getProperty("jdbc.name"));
         bean.setDataSource(getTrafficNewDataSource());
 
         HibernateJpaVendorAdapter adapter = new HibernateJpaVendorAdapter();
@@ -75,7 +75,7 @@ public class DatabaseConfig {
     @Bean(name = "trafficEntityManagerFactory")
     public EntityManagerFactory getTrafficEntityManagerFactory() {
         LocalContainerEntityManagerFactoryBean bean = new LocalContainerEntityManagerFactoryBean();
-//        bean.setPersistenceUnitName(env.getProperty("jdbc.name"));
+        bean.setPersistenceUnitName(env.getProperty("jdbc.name"));
         bean.setDataSource(getTrafficDataSource());
 
         HibernateJpaVendorAdapter adapter = new HibernateJpaVendorAdapter();
