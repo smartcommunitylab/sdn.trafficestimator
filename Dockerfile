@@ -1,9 +1,10 @@
+# syntax=docker/dockerfile:experimental
 FROM maven:3-jdk-11 AS mvn
 WORKDIR /tmp
 COPY ./pom.xml /tmp/traffic/pom.xml
 COPY ./src /tmp/traffic/src
 WORKDIR /tmp/traffic
-RUN mvn clean install -Dmaven.test.skip=true
+RUN --mount=type=cache,target=/root/.m2 mvn clean install -Dmaven.test.skip=true
 
 FROM adoptopenjdk/openjdk11:alpine
 ENV FOLDER=/tmp/traffic/target
@@ -22,4 +23,4 @@ RUN chown ${USER}:${USER_GROUP} /home/${USER}/app
 COPY --from=mvn --chown=traffic:traffic ${FOLDER}/${APP} /home/${USER}/app/traffic.jar
 
 USER traffic
-CMD ["java", "-jar", "traffic.jar"]
+CMD ["java", "-XX:MaxRAMPercentage=50", "-jar", "traffic.jar"]
