@@ -5,6 +5,7 @@
 	<persistence-unit name="test">
 		<properties>
 			<property name="hibernate.event.merge.entity_copy_observer" value="allow"/>
+			<property name="hibernate.temp.use_jdbc_metadata_defaults" value="false" />
 		</properties>
 	</persistence-unit>
 </persistence>

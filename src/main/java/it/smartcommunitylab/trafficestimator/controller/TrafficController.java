@@ -89,7 +89,7 @@ public class TrafficController {
 
     @SuppressWarnings("unchecked")
     @ApiOperation(value = "Get OSM plus TMC data for the specified route")
-    @RequestMapping(method = RequestMethod.POST, value = "/traffic/route")
+    @RequestMapping(method = RequestMethod.POST, value = "/osm/route")
     public ResponseEntity<List<osmdata>> getRouteData(@RequestBody RouteTrafficQuery query) throws Exception {
 
         // fetch points from query
